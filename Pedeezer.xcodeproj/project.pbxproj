@@ -12,6 +12,10 @@
 		9E363520216E8B7A005AB03B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E36351F216E8B7A005AB03B /* Assets.xcassets */; };
 		9E363523216E8B7A005AB03B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E363521216E8B7A005AB03B /* LaunchScreen.storyboard */; };
 		9E36353121726EA0005AB03B /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36353021726EA0005AB03B /* Playlist.swift */; };
+		9E36353621742D02005AB03B /* Artistas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36353521742D02005AB03B /* Artistas.swift */; };
+		9E36353921742F53005AB03B /* ListaArtistas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36353821742F53005AB03B /* ListaArtistas.swift */; };
+		9E36353B21752859005AB03B /* Musicas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36353A21752859005AB03B /* Musicas.swift */; };
+		9E36353E21752AC8005AB03B /* DownloadImagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36353D21752AC8005AB03B /* DownloadImagem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		9E363522216E8B7A005AB03B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9E363524216E8B7A005AB03B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9E36353021726EA0005AB03B /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		9E36353521742D02005AB03B /* Artistas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artistas.swift; sourceTree = "<group>"; };
+		9E36353821742F53005AB03B /* ListaArtistas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaArtistas.swift; sourceTree = "<group>"; };
+		9E36353A21752859005AB03B /* Musicas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Musicas.swift; sourceTree = "<group>"; };
+		9E36353D21752AC8005AB03B /* DownloadImagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImagem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,42 @@
 		9E363517216E8B78005AB03B /* Pedeezer */ = {
 			isa = PBXGroup;
 			children = (
+				9E36354021754DB0005AB03B /* View */,
+				9E36353721742F34005AB03B /* ViewModel */,
+				9E36353421742CDA005AB03B /* Model */,
 				9E363518216E8B78005AB03B /* AppDelegate.swift */,
 				9E36351A216E8B78005AB03B /* ViewController.swift */,
 				9E36351F216E8B7A005AB03B /* Assets.xcassets */,
 				9E363521216E8B7A005AB03B /* LaunchScreen.storyboard */,
 				9E363524216E8B7A005AB03B /* Info.plist */,
 				9E36353021726EA0005AB03B /* Playlist.swift */,
+				9E36353D21752AC8005AB03B /* DownloadImagem.swift */,
 			);
 			path = Pedeezer;
+			sourceTree = "<group>";
+		};
+		9E36353421742CDA005AB03B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9E36353521742D02005AB03B /* Artistas.swift */,
+				9E36353A21752859005AB03B /* Musicas.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9E36353721742F34005AB03B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9E36353821742F53005AB03B /* ListaArtistas.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9E36354021754DB0005AB03B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,9 +170,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E36353621742D02005AB03B /* Artistas.swift in Sources */,
+				9E36353921742F53005AB03B /* ListaArtistas.swift in Sources */,
 				9E36351B216E8B78005AB03B /* ViewController.swift in Sources */,
 				9E363519216E8B78005AB03B /* AppDelegate.swift in Sources */,
+				9E36353E21752AC8005AB03B /* DownloadImagem.swift in Sources */,
 				9E36353121726EA0005AB03B /* Playlist.swift in Sources */,
+				9E36353B21752859005AB03B /* Musicas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
