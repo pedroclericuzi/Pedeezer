@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 var arrArtista:[Artistas] = []
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -17,6 +18,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         view.backgroundColor = UIColor.white
         navigationController?.navigationBar.topItem?.title = "Choose your singer"
+        
         let screenSize: CGRect = UIScreen.main.bounds
         self.menuTableView = UITableView(frame: CGRect(x: 0, y: 0, width: screenSize.width, height: screenSize.height))
         self.menuTableView.delegate = self
@@ -42,7 +44,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Teste")
+        let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Artistas")
         cell.textLabel?.text = dados[indexPath.row].nome
         return cell
     }

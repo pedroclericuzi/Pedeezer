@@ -8,7 +8,7 @@
 
 import UIKit
 import Foundation
-
+var urlMusica:String?
 class Playlist : UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var menuTableView:UITableView!
@@ -93,15 +93,15 @@ class Playlist : UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Teste")
+        let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Musicas")
         cell.textLabel?.text = musicas[indexPath.row].nome
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //arrArtista = [dados[indexPath.row]]
-        //let playlist = Playlist()
-        //self.navigationController?.pushViewController(playlist, animated: false)
+        urlMusica = musicas[indexPath.row].preview
+        let player = Player()
+        self.navigationController?.pushViewController(player, animated: false)
     }
     
     @objc
