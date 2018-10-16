@@ -21,7 +21,7 @@ class Playlist : UITableViewController {
         view.backgroundColor = UIColor.white
         navigationController?.navigationBar.topItem?.title = "\(arrArtista[0].nome)"
         self.viewDetalhes()
-        self.mTableView()
+        //self.mTableView()
         self.listaMusicas.gettingCountMusicas(i: 1){(output) in
             self.listaMusicas.getMusicasJSON(artista: 1, qtd: output) { (output2) in
                 //print(output2.count)
@@ -92,11 +92,11 @@ class Playlist : UITableViewController {
         //self.navigationController?.pushViewController(playlist, animated: false)
     }
     
-    func mTableView() {
+    /*func mTableView() {
         let screenSize: CGRect = UIScreen.main.bounds
         let navBarHeight = (navigationController?.navigationBar.frame.size.height)! + 20
-        self.tableView = UIView(frame: CGRect(x: 0, y: navBarHeight, width: screenSize.width, height: screenSize.height * 0.85)) as! UITableView
-    }
+        self.tableView = UITableView(frame: CGRect(x: 0, y: navBarHeight, width: screenSize.width, height: screenSize.height * 0.85))
+    }*/
     
     @objc
     func funcaoClique(sender:UITapGestureRecognizer) {
