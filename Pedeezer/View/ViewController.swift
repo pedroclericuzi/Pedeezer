@@ -44,7 +44,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Artistas")
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "Artistas")
         cell.textLabel?.text = dados[indexPath.row].nome
         return cell
     }

@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import AVKit
 
 class Player : UIViewController {
     var tocando:Bool = false
@@ -19,6 +20,12 @@ class Player : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print(error)
+        }
         self.loadRadio(radioURL: urlMusica!)
         self.itensTela()
         self.statusPlay()
@@ -50,13 +57,13 @@ class Player : UIViewController {
     func statusPlay() -> Void {
         DispatchQueue.main.async {
             
-            self.avplayer?.addPeriodicTimeObserver(forInterval: CMTimeMake(1, 600), queue: DispatchQueue.main, using: { time in
-                if self.avplayer?.timeControlStatus == AVPlayerTimeControlStatus.playing{
+            self.avplayer?.addPeriodicTimeObserver(forInterval: CMTimeMake(value: 1, timescale: 600), queue: DispatchQueue.main, using: { time in
+                if self.avplayer?.timeControlStatus == AVPlayer.TimeControlStatus.playing{
                     self.labelStatus?.text = ""
                     self.btPlay?.isHidden = true
                     self.btPause?.isHidden = false
                 }
-                if self.avplayer?.timeControlStatus == AVPlayerTimeControlStatus.paused{
+                if self.avplayer?.timeControlStatus == AVPlayer.TimeControlStatus.paused{
                     self.btPlay?.isHidden = false
                     self.btPause?.isHidden = true
                 }

@@ -93,7 +93,7 @@ class Playlist : UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Musicas")
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "Musicas")
         cell.textLabel?.text = musicas[indexPath.row].nome
         return cell
     }
