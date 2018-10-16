@@ -25,8 +25,8 @@ class Playlist : UIViewController, UITableViewDataSource, UITableViewDelegate {
         navigationController?.navigationBar.topItem?.title = "\(arrArtista[0].nome)"
         self.viewDetalhes()
         self.mTableView()
-        self.listaMusicas.gettingCountMusicas(i: 1){(output) in
-            self.listaMusicas.getMusicasJSON(artista: 1, qtd: output) { (output2) in
+        self.listaMusicas.gettingCountMusicas(i: arrArtista[0].id){(output) in
+            self.listaMusicas.getMusicasJSON(artista: arrArtista[0].id, qtd: output) { (output2) in
                 self.musicas = output2
                 DispatchQueue.main.async {
                     self.menuTableView!.reloadData()
