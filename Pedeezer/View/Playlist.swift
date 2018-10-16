@@ -9,8 +9,10 @@
 import UIKit
 import Foundation
 
-class Playlist : UIViewController {
+class Playlist : UITableViewController {
+    var musicas:[Musicas] = []
     let downloadImagem = DownloadImagem()
+    let listaMusicas = ListaMusicas()
     var imagem: UIImageView?
     var nomeBanda:UILabel?
     var linkBanda:UILabel?
@@ -19,6 +21,17 @@ class Playlist : UIViewController {
         view.backgroundColor = UIColor.white
         navigationController?.navigationBar.topItem?.title = "\(arrArtista[0].nome)"
         self.viewDetalhes()
+        self.mTableView()
+        self.listaMusicas.gettingCountMusicas(i: 1){(output) in
+            self.listaMusicas.getMusicasJSON(artista: 1, qtd: output) { (output2) in
+                //print(output2.count)
+                self.musicas = output2
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
+            }
+        }
     }
     
     func viewDetalhes() -> Void {
@@ -31,7 +44,6 @@ class Playlist : UIViewController {
         self.view.addSubview(myView)
         
         downloadImagem.convertImagem(url: arrArtista[0].imagemUrl) { (output) in
-            print(output)
             DispatchQueue.main.async {
                 self.imagem  = UIImageView(frame: CGRect(x: screenSize.width * 0.04,
                                                          y: navBarHeight + (myViewHeight * 0.25),
@@ -64,8 +76,26 @@ class Playlist : UIViewController {
         
     }
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return musicas.count;
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: "Teste")
+        cell.textLabel?.text = musicas[indexPath.row].nome
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //arrArtista = [dados[indexPath.row]]
+        //let playlist = Playlist()
+        //self.navigationController?.pushViewController(playlist, animated: false)
+    }
+    
     func mTableView() {
-        
+        let screenSize: CGRect = UIScreen.main.bounds
+        let navBarHeight = (navigationController?.navigationBar.frame.size.height)! + 20
+        self.tableView = UIView(frame: CGRect(x: 0, y: navBarHeight, width: screenSize.width, height: screenSize.height * 0.85)) as! UITableView
     }
     
     @objc

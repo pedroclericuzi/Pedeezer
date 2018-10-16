@@ -14,7 +14,7 @@ class DownloadImagem {
         let url = URL(string: url)
         let task = URLSession.shared.dataTask(with: url!) { (data, response, err) in
             guard let data = data else {return}
-            print(data)
+            //print(data)
             completion(UIImage(data: data)!)
         }
         task.resume()

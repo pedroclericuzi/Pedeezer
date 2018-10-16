@@ -16,6 +16,7 @@
 		9E36353921742F53005AB03B /* ListaArtistas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36353821742F53005AB03B /* ListaArtistas.swift */; };
 		9E36353B21752859005AB03B /* Musicas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36353A21752859005AB03B /* Musicas.swift */; };
 		9E36353E21752AC8005AB03B /* DownloadImagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36353D21752AC8005AB03B /* DownloadImagem.swift */; };
+		9E36354421755C20005AB03B /* ListaMusicas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E36354321755C20005AB03B /* ListaMusicas.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		9E36353821742F53005AB03B /* ListaArtistas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaArtistas.swift; sourceTree = "<group>"; };
 		9E36353A21752859005AB03B /* Musicas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Musicas.swift; sourceTree = "<group>"; };
 		9E36353D21752AC8005AB03B /* DownloadImagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImagem.swift; sourceTree = "<group>"; };
+		9E36354321755C20005AB03B /* ListaMusicas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaMusicas.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,16 +64,14 @@
 		9E363517216E8B78005AB03B /* Pedeezer */ = {
 			isa = PBXGroup;
 			children = (
+				9E36354721758FA0005AB03B /* Services */,
 				9E36354021754DB0005AB03B /* View */,
 				9E36353721742F34005AB03B /* ViewModel */,
 				9E36353421742CDA005AB03B /* Model */,
 				9E363518216E8B78005AB03B /* AppDelegate.swift */,
-				9E36351A216E8B78005AB03B /* ViewController.swift */,
 				9E36351F216E8B7A005AB03B /* Assets.xcassets */,
 				9E363521216E8B7A005AB03B /* LaunchScreen.storyboard */,
 				9E363524216E8B7A005AB03B /* Info.plist */,
-				9E36353021726EA0005AB03B /* Playlist.swift */,
-				9E36353D21752AC8005AB03B /* DownloadImagem.swift */,
 			);
 			path = Pedeezer;
 			sourceTree = "<group>";
@@ -89,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				9E36353821742F53005AB03B /* ListaArtistas.swift */,
+				9E36354321755C20005AB03B /* ListaMusicas.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -96,8 +97,18 @@
 		9E36354021754DB0005AB03B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9E36351A216E8B78005AB03B /* ViewController.swift */,
+				9E36353021726EA0005AB03B /* Playlist.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9E36354721758FA0005AB03B /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				9E36353D21752AC8005AB03B /* DownloadImagem.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +188,7 @@
 				9E36353E21752AC8005AB03B /* DownloadImagem.swift in Sources */,
 				9E36353121726EA0005AB03B /* Playlist.swift in Sources */,
 				9E36353B21752859005AB03B /* Musicas.swift in Sources */,
+				9E36354421755C20005AB03B /* ListaMusicas.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +327,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EN2NCDPUFG;
 				INFOPLIST_FILE = Pedeezer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,6 +346,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EN2NCDPUFG;
 				INFOPLIST_FILE = Pedeezer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
